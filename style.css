@@ -58,6 +58,7 @@ nav ul{
     border-radius: 5px;
     position: fixed;
     border: 2px solid rgb(10, 112, 254);
+    z-index:1;
 }
  
 nav ul li{
