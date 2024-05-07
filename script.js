@@ -12,7 +12,6 @@ var links8 = document.getElementById("claim8");
 var links9 = document.getElementById("claim9");
 var links10 = document.getElementById("claim10");
 var links11 = document.getElementById("claim11");
-var done11 = document.getElementById("done11");
 
 var done1 = document.getElementById("done1");
 var done2 = document.getElementById("done2");
@@ -24,6 +23,7 @@ var done7 = document.getElementById("done7");
 var done8 = document.getElementById("done8");
 var done9 = document.getElementById("done9");
 var done10 = document.getElementById("done10");
+var done11 = document.getElementById("done11");
 
 let song = document.getElementById("music")
 let song2 = document.getElementById("music2")
@@ -81,14 +81,14 @@ localStorage.setItem("name3",done3.innerText);
 //     localStorage.setItem("color4",done4.style.backgroundColor);
 // localStorage.setItem("name4",done4.innerText);
 
-gsap.from(".container #done4",{
-    delay:3,
-    duration:1.5,
-    rotate:360,
-    scale:1,
-    opacity:0,
-    innerText:"claimed"
-})
+// gsap.from(".container #done4",{
+//     delay:3,
+//     duration:1.5,
+//     rotate:360,
+//     scale:1,
+//     opacity:0,
+//     innerText:"claimed"
+// })
             })
 
             var storedcolor4 = localStorage.getItem("color4");
@@ -220,11 +220,15 @@ if(storedcolor10){
             
             function nday(){
                 // var lelo = new Date().setUTCHours(23,58,0);
-                var now = new Date().setHours(new Date().getHours()+ 24 )
-                console.log(new Date(now))
+                // var now = new Date().setHours(new Date().getHours()+ 24 )
+                var now = new Date();
+                now.setUTCHours(0,29,0);
+                console.log(new Date(now));
                 // console.log(new Date(lelo))
-                return now
+                return now.getTime();
                 }
+
+                var timeDiff = nday() - Date.now();
 
                 // console.log(nday())
                 
@@ -245,12 +249,12 @@ if(storedcolor10){
                     localStorage.removeItem("name2");
                     localStorage.removeItem("color3");
                     localStorage.removeItem("name3");
-                    // localStorage.removeItem("color4");
-                    // localStorage.removeItem("name4");
+                    localStorage.removeItem("color4");
+                    localStorage.removeItem("name4");
                     localStorage.removeItem("color5");
                     localStorage.removeItem("name5");
-                    // localStorage.removeItem("color6");
-                    // localStorage.removeItem("name6");
+                    localStorage.removeItem("color6");
+                    localStorage.removeItem("name6");
                     localStorage.removeItem("color7");
                     localStorage.removeItem("name7");
                     localStorage.removeItem("color8");
@@ -259,8 +263,6 @@ if(storedcolor10){
                     localStorage.removeItem("name9");
                     localStorage.removeItem("color10");
                     localStorage.removeItem("name10");
-                    localStorage.clear("color11")
-                    localStorage.clear("name11")
                     done11.style.backgroundColor = "white";
                     done11.innerText = "Claim";
                     done1.style.backgroundColor = "white";
@@ -269,14 +271,14 @@ if(storedcolor10){
                     done2.innerText = "Claim";
                     done3.style.backgroundColor = "white";
                     done3.innerText = "Claim";
-                    }, nday());
+                    }, timeDiff);
 
 
 
 //ANOTHER SHORTCUT WAY ( Problem:All Buttons get green at same time )
 
-const dekhte = [links1,links2,links3,links4,links5,links6,links7,links8,links9,links10,links11];
-const butten = [done1,done2,done3,done4,done5,done6,done7,done8,done9,done10,done11];
+// const dekhte = [links1,links2,links3,links4,links5,links6,links7,links8,links9,links10,links11];
+// const butten = [done1,done2,done3,done4,done5,done6,done7,done8,done9,done10,done11];
 
 // dekhte.forEach((link) => {
 //     addEventListener("click", function(){
@@ -289,13 +291,13 @@ const butten = [done1,done2,done3,done4,done5,done6,done7,done8,done9,done10,don
 gsap.from(".container li",{
     delay:1,
     duration:2,
-    // y:-280,
+    y:-280,
     opacity:0,
     stagger:1,
-    scrollTrigger:{
-        trigger:".container li",
-        scroller:"body",
-        markers:true,
-        start:"top 20%",
-    }
+    // scrollTrigger:{
+    //     trigger:".container li",
+    //     scroller:"body",
+    //     markers:true,
+    //     start:"top 20%",
+    // }
 })
