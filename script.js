@@ -222,7 +222,7 @@ if(storedcolor10){
                 // var lelo = new Date().setUTCHours(23,58,0);
                 // var now = new Date().setHours(new Date().getHours()+ 24 )
                 var now = new Date();
-                now.setUTCHours(8,35,0);
+                now.setUTCHours(18,35,0);
                 console.log(new Date(now));
                 // console.log(new Date(lelo))
                 return now.getTime();
