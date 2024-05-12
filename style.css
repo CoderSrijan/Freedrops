@@ -139,3 +139,9 @@ footer{
     color: rgb(255, 253, 253);
     text-align: center;
 }
+
+@media screen and (max-width: 760px) {
+       nav ul{
+        width: 85%
+       }
+}
