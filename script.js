@@ -341,6 +341,6 @@ localStorage.setItem("name3",done3.innerText);
 //         // }
 //     })
     
-//     Notification.requestPermission()
+     Notification.requestPermission()
     
     
