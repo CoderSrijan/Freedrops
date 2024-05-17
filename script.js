@@ -199,6 +199,7 @@ localStorage.setItem("name3",done3.innerText);
 
             
             links11.addEventListener("click", function(){
+                event.preventDefault(); 
                var userHours = prompt("Enter the number of hours for the countdown:", "2");
     if (userHours !== null && !isNaN(userHours) && userHours > 0) {
         var hours = parseFloat(userHours);
@@ -214,6 +215,7 @@ localStorage.setItem("name3",done3.innerText);
                 startTimer(endTime);
                 localStorage.setItem("userHours", hours);
 
+                window.open(links11.href, "_blank");
                   }   else {
                     alert("Please enter a valid number of hours.");
                 }
