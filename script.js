@@ -246,7 +246,10 @@ if(storedEndTime){
             
                     if (distance < 0) {
                         clearInterval(x);
-                        done11.innerText = "EXPIRED";
+                        done11.innerText = "Claim";
+                        localStorage.removeItem("endTime", endTime)
+                        localStorage.removeItem("name11",done11.innerText);
+                        localStorage.removeItem("userHours", hours);
                     }
                 }, 1000);
             }
@@ -262,16 +265,16 @@ if(storedEndTime){
             //     return now.getTime();
             //     // return now;
             // }
-            var now = new Date();
-            now.setHours(23,55,0);
+            // var now = new Date();
+            // now.setHours(23,55,0);
 
-            var deadline = new Date(new Date());
+            // var deadline = new Date(new Date());
             
-            console.log("Claim Timing " + now);
-            // console.log("Deadline Ka Waqt " + new Date(new Date()));
-            console.log("Deadline Ka Waqt " + deadline);
+            // console.log("Claim Timing " + now);
+            // // console.log("Deadline Ka Waqt " + new Date(new Date()));
+            // console.log("Deadline Ka Waqt " + deadline);
             
-            // var timeDiff = nday() - Date.now();
+            // // var timeDiff = nday() - Date.now();
             
             
             //     var see = nday();
@@ -283,33 +286,33 @@ if(storedEndTime){
             
             //     console.log(timeDifference);
             
-            if(deadline > now){
-                console.log("Dekha bhai hogya na")
-                localStorage.removeItem("color11");
-                localStorage.removeItem("name11");
+            // if(deadline > now){
+            //     console.log("Dekha bhai hogya na")
+            //     localStorage.removeItem("color11");
+            //     localStorage.removeItem("name11");
 
-                localStorage.removeItem("color1");
-                localStorage.removeItem("name1");
-                localStorage.removeItem("color2");
-                localStorage.removeItem("name2");
-                localStorage.removeItem("color3");
-                localStorage.removeItem("name3");
-                localStorage.removeItem("color4");
-                localStorage.removeItem("name4");
-                localStorage.removeItem("color5");
-                localStorage.removeItem("name5");
-                localStorage.removeItem("color6");
-                localStorage.removeItem("name6");
-                localStorage.removeItem("color7");
-                localStorage.removeItem("name7");
-                localStorage.removeItem("color8");
-                localStorage.removeItem("name8");
-                localStorage.removeItem("color9");
-                localStorage.removeItem("name9");
-                localStorage.removeItem("color10");
-                localStorage.removeItem("name10");
+            //     localStorage.removeItem("color1");
+            //     localStorage.removeItem("name1");
+            //     localStorage.removeItem("color2");
+            //     localStorage.removeItem("name2");
+            //     localStorage.removeItem("color3");
+            //     localStorage.removeItem("name3");
+            //     localStorage.removeItem("color4");
+            //     localStorage.removeItem("name4");
+            //     localStorage.removeItem("color5");
+            //     localStorage.removeItem("name5");
+            //     localStorage.removeItem("color6");
+            //     localStorage.removeItem("name6");
+            //     localStorage.removeItem("color7");
+            //     localStorage.removeItem("name7");
+            //     localStorage.removeItem("color8");
+            //     localStorage.removeItem("name8");
+            //     localStorage.removeItem("color9");
+            //     localStorage.removeItem("name9");
+            //     localStorage.removeItem("color10");
+            //     localStorage.removeItem("name10");
 
-            }
+            // }
       
             // setTimeout(function() {
             //     localStorage.removeItem("color11");
