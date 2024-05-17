@@ -19,7 +19,7 @@ buttonList.addEventListener("click", function(event){
         var hours = parseFloat(userHours);
         button.style.backgroundColor = "lightgreen";
         song2.play();
-        var endTime = new Date(new Date().getTime() + hours * 60 * 1000); // User-defined hours from now
+        var endTime = new Date(new Date().getTime() + hours * 60 * 60 * 1000); // User-defined hours from now
         localStorage.setItem("endTime_" + button.id, endTime);
         localStorage.setItem("color_" + button.id, button.style.backgroundColor);
         localStorage.setItem("userHours_" + button.id, hours); // Store user-defined hours
