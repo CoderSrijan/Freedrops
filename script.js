@@ -199,24 +199,54 @@ localStorage.setItem("name3",done3.innerText);
 
             
             links11.addEventListener("click", function(){
+               var userHours = prompt("Enter the number of hours for the countdown:", "2");
+    if (userHours !== null && !isNaN(userHours) && userHours > 0) {
+        var hours = parseFloat(userHours);
                 done11.style.backgroundColor = "lightgreen";
-                done11.innerText = "Claimed" ;
                 
                 song2.play();
                 
                 
-                localStorage.setItem("color11",done11.style.backgroundColor);
+                // localStorage.setItem("color11",done11.style.backgroundColor);
+                var endTime = new Date(new Date().getTime() + hours * 60 * 60 * 1000);
+                localStorage.setItem("endTime", endTime);
                 localStorage.setItem("name11",done11.innerText);
-                
-                // alert(`Claim After ${nday()}`);
-                
+                startTimer(endTime);
+                localStorage.setItem("userHours", hours);
+
+                  }   else {
+                    alert("Please enter a valid number of hours.");
+                }
             })
             
             var storedcolor = localStorage.getItem("color11");
-            var storedvalue = localStorage.getItem("name11");
+           var storedEndTime = localStorage.getItem("endTime");
             if(storedcolor){
                 done11.style.backgroundColor = storedcolor;
-                done11.innerText = storedvalue;
+                // done11.innerText = storedvalue;
+            }
+
+if(storedEndTime){
+                var endTime = new Date(storedEndTime);
+                startTimer(endTime);
+            }
+
+            function startTimer(endTime) {
+                var x = setInterval(() => {
+                    var now = new Date().getTime();
+                    var distance = endTime - now;
+            
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+                    done11.innerText = `${hours}:${minutes}:${seconds}`;
+            
+                    if (distance < 0) {
+                        clearInterval(x);
+                        done11.innerText = "EXPIRED";
+                    }
+                }, 1000);
             }
 
             
