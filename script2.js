@@ -66,6 +66,8 @@ function startTimer(button, endTime) {
       localStorage.removeItem("endTime_" + button.id, endTime);
         localStorage.removeItem("color_" + button.id, button.style.backgroundColor);
         localStorage.removeItem("userHours_" + button.id, hours);
+      new Notification("Claim Krlo Phirse");
     }
   }, 1000);
 }
+Notification.requestPermission();
